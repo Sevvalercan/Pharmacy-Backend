@@ -9,6 +9,7 @@ namespace Pharmacy_Backend.Extensions
         {
             services.AddControllersWithViews()
                 .AddFluentValidation();
+
             //Services
             services.AddScoped<IlaclarController>();
 

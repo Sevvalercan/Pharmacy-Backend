@@ -1,10 +1,23 @@
-﻿namespace Pharmacy_Backend.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Pharmacy_Backend.Models
+
 {
-    public class Ilac
+    [Table("Medicines")]
+    public class Ilac:BaseEntity
     {
-        public int Id { get; set; }
-        public string Adi { get; set; }
-        public string Barkod { get; set; }
-        public int Stok { get; set; }
+        [Column("Name")]
+        public string Name { get; set; }
+        [Column("Barcode")]
+
+        public string Barcode { get; set; }
+        [Column("Description")]
+
+        public string Description { get; set; }
+        [Column("Stock")]
+
+        public int Stock { get; set; }
+
+
     }
 }
