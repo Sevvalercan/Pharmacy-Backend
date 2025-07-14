@@ -1,5 +1,6 @@
 ﻿using FluentValidation.AspNetCore;
 using Pharmacy_Backend.Controllers;
+using Pharmacy_Backend.Repositories;
 
 namespace Pharmacy_Backend.Extensions
 {
@@ -13,8 +14,8 @@ namespace Pharmacy_Backend.Extensions
             //Services
             services.AddScoped<IlaclarController>();
 
-
-
+            //Repositories
+            services.AddScoped<IIlacRepositories,EfIlacRepository>();
             return services;
 
         }

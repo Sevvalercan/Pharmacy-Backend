@@ -4,10 +4,18 @@ using Pharmacy_Backend.Models;
 
 namespace Pharmacy_Backend.Data
 {
-    public class ContextDb : DbContext
+    public class PharmacyBackendDbContext : DbContext
     {
-        public ContextDb(DbContextOptions<ContextDb> options) : base(options) { }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
 
+            optionsBuilder.UseSqlServer(@"Server=SEVVAL;Database=Pharmacy;Trusted_Connection=True;TrustServerCertificate=True;",
+                sqlServerOptionsAction: sqlOptions =>
+                {
+                    sqlOptions.EnableRetryOnFailure();
+                });
+
+        }
         public DbSet<Ilac> Ilaclar { get; set; }
     }
 }

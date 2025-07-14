@@ -1,8 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
-using System.Security.Principal;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Pharmacy_Backend.Models
+namespace Pharmacy_Backend.Core.Entities
 {
     public class BaseEntity : IEntity
     {
@@ -22,10 +24,9 @@ namespace Pharmacy_Backend.Models
         [System.Text.Json.Serialization.JsonIgnore]
         [Column("modified_date")]
         public DateTime ModifiedDate { get; set; }
+
         [System.Text.Json.Serialization.JsonIgnore]
         [Column("deleted_date")]
-
         public DateTime DeletedDate { get; set; }
-
     }
 }
