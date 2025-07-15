@@ -210,7 +210,7 @@ namespace Pharmacy_Backend.Controllers
 
 
         //ilaç ekleme
-        [HttpPost("ilaç ekleme")]
+        [HttpPost]
         [AllowAnonymous]
         public async Task<BaseApiResponse> AddIlac([FromBody] IlacCreateRequest model)
         {
@@ -229,11 +229,10 @@ namespace Pharmacy_Backend.Controllers
                 Description = model.Description,
                 Barcode = model.Barcode,
                 Stock = model.Stock,
-                Status = false, // aktif
+                Status = true,
                 CreatedDate = DateTime.UtcNow,
                 ModifiedDate = DateTime.UtcNow,
-                DeletedDate = DateTime.UtcNow
-
+                DeletedDate = DateTime.MinValue // ← silinmemiş demek
             };
 
             await _ilacRepositories.AddAsync(ilac);
