@@ -1,12 +1,10 @@
 ﻿namespace Pharmacy_Backend.DTOs
 {
-    public class IlaclarModel
+    public class IlacCreateRequest
     {
-        public long Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public string Barcode { get; set; }
-      //  public string Stock { get; set; }
-        
+        public int Stock { get; set; }
     }
 }
