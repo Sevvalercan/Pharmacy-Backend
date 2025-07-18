@@ -21,7 +21,7 @@ namespace Pharmacy_Backend.Controllers
 
 
         //tüm ilaçları listeleme
-        [HttpGet ("ilaç listeleme")]
+        [HttpGet]
         [AllowAnonymous]
         public async Task<IlaclarModelResponse> GetIlaclar()
         {
@@ -54,7 +54,7 @@ namespace Pharmacy_Backend.Controllers
 
 
         //id ye göre ilaç getirme
-        [HttpGet("{id} göre ilaç getirme")]
+        [HttpGet("{id}")]
         [AllowAnonymous]
         public async Task<IActionResult> GetIlac(long id)
         {
@@ -137,7 +137,7 @@ namespace Pharmacy_Backend.Controllers
 
 
         //ilaç düzenleme
-        [HttpPut("ilaç düzenleme")]
+        [HttpPut()]
         [AllowAnonymous]
         // Gerekirse AllowAnonymous yapılabilir
         public async Task<BaseApiResponse> UpdateIlac([FromBody] IlacUpdateModel model)
@@ -179,7 +179,7 @@ namespace Pharmacy_Backend.Controllers
 
         // ilaç silme(soft delete)
 
-        [HttpDelete("{id} göre ilaç silme")]
+        [HttpDelete("{id}")]
         [AllowAnonymous]
         public async Task<BaseApiResponse> DeleteIlac(long id)
         {
