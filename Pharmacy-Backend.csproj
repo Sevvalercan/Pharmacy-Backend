@@ -10,8 +10,8 @@
   <ItemGroup>
     <Compile Remove="DTOs\CreateIlacModel.cs" />
     <Compile Remove="DTOs\IlacFiltreleResponse.cs" />
+    <Compile Remove="DTOs\IlacFiltreRequest - Kopyala.cs" />
     <Compile Remove="DTOs\IlacFiltreRequest.cs.cs" />
-    <Compile Remove="DTOs\IlacFiltreResponse.cs" />
   </ItemGroup>
 
   <ItemGroup>
